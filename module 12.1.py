@@ -12,8 +12,7 @@ class RunnerTest(unittest.TestCase):
         y = runner.Runner('Ugor')
         for i in range(10):
             y.run()
-        self.assertEqual(y.run(), 50, f'{y.name} должен пробежать 50 метров, а пробежал {y.run()}')
-
+        self.assertEqual(y.distance(), 100, f'{y.name} должен пробежать 100 метров, а пробежал {y.distance()}')
 
     def test_challenge(self):
         x = runner.Runner('Mark')
@@ -22,8 +21,17 @@ class RunnerTest(unittest.TestCase):
         y = runner.Runner('Ugor')
         for i in range(10):
             y.run()
-        self.assertNotEqual(x.distance, y.run)
+        self.assertNotEqual(x.distance(), y.distance(), "Разница значений")
 
+
+
+if __name__ == "__main__":
+    unittest.main()
+
+
+#Ran 1 test in 0.017s
+
+#Ran 3 tests in 0.001s OK
 
 #Ran 1 test in 0.017s
 
